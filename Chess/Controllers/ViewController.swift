@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, ChessDelegate {
-    
+
     var chessEngine: ChessEngine = ChessEngine()
     
     @IBOutlet weak var boardView: BoardView!
@@ -30,6 +30,10 @@ class ViewController: UIViewController, ChessDelegate {
         chessEngine.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
         boardView.shadowPieces = chessEngine.pieces
         boardView.setNeedsDisplay()
+    }
+    
+    func getPieceAt(col: Int, row: Int) -> ChessPiece? {
+        return chessEngine.pieceAt(col: col, row: row)
     }
     
 }
