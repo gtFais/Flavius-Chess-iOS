@@ -13,6 +13,12 @@ class ViewController: UIViewController, ChessDelegate {
     var chessEngine: ChessEngine = ChessEngine()
     
     @IBOutlet weak var boardView: BoardView!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBAction func resetButton(_ sender: UIButton) {
+        chessEngine.initializeGame()
+        boardView.shadowPieces = chessEngine.pieces
+        boardView.setNeedsDisplay()
+    }
     
     var audioPlayer: AVAudioPlayer!
     
@@ -38,6 +44,12 @@ class ViewController: UIViewController, ChessDelegate {
         boardView.setNeedsDisplay()
         
         audioPlayer.play()
+        
+        if chessEngine.whitesTurn {
+            infoLabel.text = "White"
+        } else {
+            infoLabel.text = "Black"
+        }
     }
     
     func getPieceAt(col: Int, row: Int) -> ChessPiece? {

@@ -23,17 +23,40 @@
                                     <constraint firstAttribute="width" secondItem="bbv-ZT-KdQ" secondAttribute="height" multiplier="1:1" id="YI4-wZ-cDe"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-Lh-oQX">
+                                <rect key="frame" x="20" y="842" width="794" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-h7-I6L">
+                                <rect key="frame" x="20" y="879" width="794" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oZU-a0-AK2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CLE-h7-I6L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="B2F-Zt-dQt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CLE-h7-I6L" secondAttribute="trailing" constant="20" id="GX0-YO-W9J"/>
                             <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UWo-EY-3aq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jXz-Lh-oQX" secondAttribute="trailing" constant="20" id="cey-kr-4Zh"/>
+                            <constraint firstItem="CLE-h7-I6L" firstAttribute="top" secondItem="jXz-Lh-oQX" secondAttribute="bottom" constant="8" id="fMz-Sv-B6n"/>
+                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ivd-ay-bQS"/>
+                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="top" secondItem="bbv-ZT-KdQ" secondAttribute="bottom" constant="8" id="os0-CY-UmZ"/>
                             <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uPc-vw-NuX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" constant="20" id="w1g-cF-DLC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="bbv-ZT-KdQ" id="xrO-hW-I3I"/>
+                        <outlet property="infoLabel" destination="jXz-Lh-oQX" id="CVH-GS-JEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

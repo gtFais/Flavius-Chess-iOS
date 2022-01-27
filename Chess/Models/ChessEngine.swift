@@ -10,12 +10,17 @@ import UIKit
 
 struct ChessEngine {
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
+    var whitesTurn: Bool = true
     
     mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
-        
+    
         guard let candidatePiece = pieceAt(col: fromCol, row: fromRow),
               !(fromCol == toCol && fromRow == toRow)
         else {
+            return
+        }
+        
+        guard (candidatePiece.isWhite == whitesTurn) else {
             return
         }
         
@@ -23,15 +28,18 @@ struct ChessEngine {
             guard !(targetPiece.isWhite && candidatePiece.isWhite) else {
                 return
             }
-            pieces.remove(candidatePiece)
             pieces.remove(targetPiece)
-            pieces.insert(ChessPiece(col: toCol, row: toRow, image: candidatePiece.image, isWhite: candidatePiece.isWhite))
+            rawMove(candidatePiece: candidatePiece, toCol: toCol, toRow: toRow)
             return
         }
-        
+        rawMove(candidatePiece: candidatePiece, toCol: toCol, toRow: toRow)
+    }
+    
+    mutating func rawMove(candidatePiece: ChessPiece, toCol: Int, toRow: Int) {
         pieces.remove(candidatePiece)
         pieces.insert(ChessPiece(col: toCol, row: toRow, image: candidatePiece.image, isWhite: candidatePiece.isWhite))
         
+        whitesTurn = !whitesTurn
     }
     
     func pieceAt(col: Int, row: Int) -> ChessPiece? {
