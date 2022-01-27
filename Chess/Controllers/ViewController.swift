@@ -17,6 +17,7 @@ class ViewController: UIViewController, ChessDelegate {
     @IBAction func resetButton(_ sender: UIButton) {
         chessEngine.initializeGame()
         boardView.shadowPieces = chessEngine.pieces
+        determineTurnLabel()
         boardView.setNeedsDisplay()
     }
     
@@ -45,6 +46,11 @@ class ViewController: UIViewController, ChessDelegate {
         
         audioPlayer.play()
         
+        determineTurnLabel()
+        
+    }
+    
+    func determineTurnLabel() {
         if chessEngine.whitesTurn {
             infoLabel.text = "White"
         } else {

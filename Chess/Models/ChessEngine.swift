@@ -53,6 +53,7 @@ struct ChessEngine {
     
     mutating func initializeGame() {
         pieces.removeAll()
+        whitesTurn = true
         
         var imagePiece: UIImage
         var isWhite = false
