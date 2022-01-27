@@ -7,15 +7,31 @@
 
 import UIKit
 
+
+
 class BoardView: UIView {
     
-    let originX: CGFloat = 23
-    let originY: CGFloat = 37
-    let cellSide: CGFloat = 41
+    let ratio: CGFloat = 0.8
+    var originX: CGFloat = 0
+    var originY: CGFloat = 0
+    var cellSide: CGFloat = -1
+    var shadowPieces: Set<ChessPiece> = Set<ChessPiece>()
     
 
     override func draw(_ rect: CGRect) {
+        print(bounds.width)
+        cellSide = bounds.width * ratio / 8
+        originX = bounds.width * (1 - ratio) / 2
+        originY = bounds.height * (1 - ratio) / 2
         drawBoard()
+        drawPieces()
+    }
+    
+    func drawPieces() {
+        for piece in shadowPieces {
+            let pieceImage = piece.image
+            pieceImage.draw(in: CGRect(x: originX + CGFloat(piece.col) * cellSide, y: originY + CGFloat(piece.row) * cellSide, width: cellSide, height: cellSide))
+        }
     }
     
     func drawBoard() {

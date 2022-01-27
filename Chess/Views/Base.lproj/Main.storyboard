@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbv-ZT-KdQ" customClass="BoardView" customModule="Chess" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="800" height="800"/>
-                                <color key="backgroundColor" red="0.62064171252108169" green="0.68832733184821304" blue="0.78274861727672707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbv-ZT-KdQ" customClass="BoardView" customModule="Chess" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="794" height="794"/>
+                                <color key="backgroundColor" red="0.83047526012663953" green="0.85697712031715878" blue="0.84711429807251648" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bbv-ZT-KdQ" secondAttribute="height" multiplier="1:1" id="YI4-wZ-cDe"/>
                                 </constraints>
@@ -27,11 +27,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DO1-K9-cM6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" constant="20" id="TUa-up-nL7"/>
-                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="UCG-A7-dDF"/>
+                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UWo-EY-3aq"/>
+                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uPc-vw-NuX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" constant="20" id="w1g-cF-DLC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="bbv-ZT-KdQ" id="xrO-hW-I3I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
