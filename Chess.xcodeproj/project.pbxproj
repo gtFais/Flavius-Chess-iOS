@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C71FC3727A290FE00C03B61 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3627A290FE00C03B61 /* BoardView.swift */; };
 		2C85214127A28F7800E73813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214027A28F7800E73813 /* AppDelegate.swift */; };
 		2C85214327A28F7800E73813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214227A28F7800E73813 /* SceneDelegate.swift */; };
 		2C85214527A28F7800E73813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214427A28F7800E73813 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C71FC3627A290FE00C03B61 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		2C85213D27A28F7800E73813 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85214027A28F7800E73813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C85214227A28F7800E73813 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2C85214027A28F7800E73813 /* AppDelegate.swift */,
 				2C85214227A28F7800E73813 /* SceneDelegate.swift */,
 				2C85214427A28F7800E73813 /* ViewController.swift */,
+				2C71FC3627A290FE00C03B61 /* BoardView.swift */,
 				2C85214627A28F7800E73813 /* Main.storyboard */,
 				2C85214927A28F7A00E73813 /* Assets.xcassets */,
 				2C85214B27A28F7A00E73813 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C85214527A28F7800E73813 /* ViewController.swift in Sources */,
+				2C71FC3727A290FE00C03B61 /* BoardView.swift in Sources */,
 				2C85214127A28F7800E73813 /* AppDelegate.swift in Sources */,
 				2C85214327A28F7800E73813 /* SceneDelegate.swift in Sources */,
 			);

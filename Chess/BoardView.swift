@@ -8,13 +8,33 @@
 import UIKit
 
 class BoardView: UIView {
+    
+    let originX: CGFloat = 23
+    let originY: CGFloat = 37
+    let cellSide: CGFloat = 41
+    
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        drawBoard()
     }
-    */
+    
+    func drawBoard() {
+        var color = UIColor.lightGray
+        for row in 0..<8 {
+            color = (color == UIColor.lightGray) ? UIColor.darkGray : UIColor.lightGray
+            for col in 0..<8 {
+                color = (color == UIColor.lightGray) ? UIColor.darkGray : UIColor.lightGray
+                drawSquare(col: col, row: row, color: color)
+            }
+        }
+    }
+    
+    func drawSquare(col: Int, row: Int, color: UIColor) {
+        let path = UIBezierPath(rect: CGRect(x: originX + CGFloat(col) * cellSide, y: originY + CGFloat(row) * cellSide, width: cellSide, height: cellSide))
+        color.setFill()
+        path.fill()
+        
+        
+    }
 
 }
