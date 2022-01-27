@@ -11,6 +11,25 @@ import UIKit
 struct ChessEngine {
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
     
+    mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+        if let foundPiece = pieceAt(col: fromCol, row: fromRow) {
+            pieces.remove(foundPiece)
+            pieces.insert(ChessPiece(col: toCol, row: toRow, image: foundPiece.image))
+        } else {
+            return
+        }
+        
+    }
+    
+    func pieceAt(col: Int, row: Int) -> ChessPiece? {
+        for piece in pieces {
+            if col == piece.col && row == piece.row {
+                return piece
+            }
+        }
+        return nil
+    }
+    
     mutating func initializeGame() {
         pieces.removeAll()
         

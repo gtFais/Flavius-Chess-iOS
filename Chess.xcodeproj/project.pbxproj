@@ -11,6 +11,7 @@
 		2C71FC3C27A2B67200C03B61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3B27A2B67200C03B61 /* Constants.swift */; };
 		2C71FC3E27A2B7EF00C03B61 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3D27A2B7EF00C03B61 /* ChessPiece.swift */; };
 		2C71FC4027A2B8D700C03B61 /* ChessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3F27A2B8D700C03B61 /* ChessEngine.swift */; };
+		2C71FC4527A2EB8000C03B61 /* ChessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */; };
 		2C85214127A28F7800E73813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214027A28F7800E73813 /* AppDelegate.swift */; };
 		2C85214327A28F7800E73813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214227A28F7800E73813 /* SceneDelegate.swift */; };
 		2C85214527A28F7800E73813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214427A28F7800E73813 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		2C71FC3B27A2B67200C03B61 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C71FC3D27A2B7EF00C03B61 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
 		2C71FC3F27A2B8D700C03B61 /* ChessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessEngine.swift; sourceTree = "<group>"; };
+		2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessDelegate.swift; sourceTree = "<group>"; };
 		2C85213D27A28F7800E73813 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85214027A28F7800E73813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C85214227A28F7800E73813 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		2C71FC4127A2B8DF00C03B61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C71FC3B27A2B67200C03B61 /* Constants.swift */,
 				2C71FC3F27A2B8D700C03B61 /* ChessEngine.swift */,
 				2C71FC3D27A2B7EF00C03B61 /* ChessPiece.swift */,
 			);
@@ -137,7 +140,7 @@
 			children = (
 				2C85214027A28F7800E73813 /* AppDelegate.swift */,
 				2C85214227A28F7800E73813 /* SceneDelegate.swift */,
-				2C71FC3B27A2B67200C03B61 /* Constants.swift */,
+				2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */,
 				2C71FC4127A2B8DF00C03B61 /* Models */,
 				2C71FC4227A2B8F200C03B61 /* Views */,
 				2C71FC4327A2B91700C03B61 /* Controllers */,
@@ -301,6 +304,7 @@
 				2C85214327A28F7800E73813 /* SceneDelegate.swift in Sources */,
 				2C71FC3E27A2B7EF00C03B61 /* ChessPiece.swift in Sources */,
 				2C71FC4027A2B8D700C03B61 /* ChessEngine.swift in Sources */,
+				2C71FC4527A2EB8000C03B61 /* ChessDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
