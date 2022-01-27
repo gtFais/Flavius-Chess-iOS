@@ -12,12 +12,12 @@ struct ChessEngine {
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
     
     mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
-        if let foundPiece = pieceAt(col: fromCol, row: fromRow) {
-            pieces.remove(foundPiece)
-            pieces.insert(ChessPiece(col: toCol, row: toRow, image: foundPiece.image))
-        } else {
+        guard let foundPiece = pieceAt(col: fromCol, row: fromRow), !(fromCol == toCol && fromRow == toRow) else {
             return
         }
+        
+        pieces.remove(foundPiece)
+        pieces.insert(ChessPiece(col: toCol, row: toRow, image: foundPiece.image))
         
     }
     

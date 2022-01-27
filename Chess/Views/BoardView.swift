@@ -20,8 +20,8 @@ class BoardView: UIView {
     
     var chessDelegate: ChessDelegate? = nil
     
-    var fromCol: Int = -10000
-    var fromRow: Int = -10000
+    var fromCol: Int?
+    var fromRow: Int?
     
     var movingImage: UIImage? = nil
     var movingPieceX: CGFloat = -1
@@ -42,7 +42,7 @@ class BoardView: UIView {
         fromCol = Int((fingerLocation.x - originX) / cellSide)
         fromRow = Int((fingerLocation.y - originY) / cellSide)
         
-        if let movingPiece = chessDelegate?.getPieceAt(col: fromCol, row: fromRow) {
+        if let fromCol = fromCol, let fromRow = fromRow, let movingPiece = chessDelegate?.getPieceAt(col: fromCol, row: fromRow) {
             movingImage = movingPiece.image
         }
         
@@ -55,26 +55,24 @@ class BoardView: UIView {
         let toCol: Int = Int((fingerLocation.x - originX) / cellSide)
         let toRow: Int = Int((fingerLocation.y - originY) / cellSide)
         
-        if let chessDelegate = chessDelegate {
+        if let fromCol = fromCol, let fromRow = fromRow, let chessDelegate = chessDelegate {
             chessDelegate.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
         }
         movingImage = nil
+        fromCol = nil
+        fromRow = nil
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let first = touches.first!
         let fingerLocation = first.location(in: self)
-        print(fingerLocation)
         movingPieceX = fingerLocation.x
         movingPieceY = fingerLocation.y
         setNeedsDisplay()
     }
     
     func drawPieces() {
-        for piece in shadowPieces {
-            if fromCol == piece.col && fromRow == piece.row {
-                continue
-            }
+        for piece in shadowPieces where !(fromCol == piece.col && fromRow == piece.row) {
             let pieceImage = piece.image
             pieceImage.draw(in: CGRect(x: originX + CGFloat(piece.col) * cellSide, y: originY + CGFloat(piece.row) * cellSide, width: cellSide, height: cellSide))
         }
