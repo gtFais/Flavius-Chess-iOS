@@ -11,7 +11,7 @@ import UIKit
 
 class BoardView: UIView {
     
-    let ratio: CGFloat = 0.8
+    let ratio: CGFloat = 1.0
     var originX: CGFloat = 0
     var originY: CGFloat = 0
     var cellSide: CGFloat = -1
@@ -61,6 +61,7 @@ class BoardView: UIView {
         movingImage = nil
         fromCol = nil
         fromRow = nil
+        setNeedsDisplay()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

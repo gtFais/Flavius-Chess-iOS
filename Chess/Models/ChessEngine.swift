@@ -12,12 +12,25 @@ struct ChessEngine {
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
     
     mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
-        guard let foundPiece = pieceAt(col: fromCol, row: fromRow), !(fromCol == toCol && fromRow == toRow) else {
+        
+        guard let candidatePiece = pieceAt(col: fromCol, row: fromRow),
+              !(fromCol == toCol && fromRow == toRow)
+        else {
             return
         }
         
-        pieces.remove(foundPiece)
-        pieces.insert(ChessPiece(col: toCol, row: toRow, image: foundPiece.image))
+        if let targetPiece = pieceAt(col: toCol, row: toRow) {
+            guard !(targetPiece.isWhite && candidatePiece.isWhite) else {
+                return
+            }
+            pieces.remove(candidatePiece)
+            pieces.remove(targetPiece)
+            pieces.insert(ChessPiece(col: toCol, row: toRow, image: candidatePiece.image, isWhite: candidatePiece.isWhite))
+            return
+        }
+        
+        pieces.remove(candidatePiece)
+        pieces.insert(ChessPiece(col: toCol, row: toRow, image: candidatePiece.image, isWhite: candidatePiece.isWhite))
         
     }
     
@@ -34,11 +47,12 @@ struct ChessEngine {
         pieces.removeAll()
         
         var imagePiece: UIImage
-        
+        var isWhite = false
         for row in 0..<8 {
             for col in 0..<8 {
                 switch row {
                 case 0:
+                    isWhite = false
                     switch col {
                     case 0, 7:
                         imagePiece = Piece.roockBlack
@@ -55,9 +69,12 @@ struct ChessEngine {
                     }
                 case 1:
                     imagePiece = Piece.pawnBlack
+                    isWhite = false
                 case 6:
                     imagePiece = Piece.pawnWhite
+                    isWhite = true
                 case 7:
+                    isWhite = true
                     switch col {
                     case 0, 7:
                         imagePiece = Piece.roockWhite
@@ -76,7 +93,7 @@ struct ChessEngine {
                 default:
                     continue
                 }
-                pieces.insert(ChessPiece(col: col, row: row, image: imagePiece))
+                pieces.insert(ChessPiece(col: col, row: row, image: imagePiece, isWhite: isWhite))
             }
         }
     }

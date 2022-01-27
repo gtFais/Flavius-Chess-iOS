@@ -12,6 +12,7 @@
 		2C71FC3E27A2B7EF00C03B61 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3D27A2B7EF00C03B61 /* ChessPiece.swift */; };
 		2C71FC4027A2B8D700C03B61 /* ChessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC3F27A2B8D700C03B61 /* ChessEngine.swift */; };
 		2C71FC4527A2EB8000C03B61 /* ChessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */; };
+		2C71FC4827A30CC300C03B61 /* drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2C71FC4727A30CC300C03B61 /* drop.wav */; };
 		2C85214127A28F7800E73813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214027A28F7800E73813 /* AppDelegate.swift */; };
 		2C85214327A28F7800E73813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214227A28F7800E73813 /* SceneDelegate.swift */; };
 		2C85214527A28F7800E73813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85214427A28F7800E73813 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		2C71FC3D27A2B7EF00C03B61 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
 		2C71FC3F27A2B8D700C03B61 /* ChessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessEngine.swift; sourceTree = "<group>"; };
 		2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessDelegate.swift; sourceTree = "<group>"; };
+		2C71FC4727A30CC300C03B61 /* drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drop.wav; sourceTree = "<group>"; };
 		2C85213D27A28F7800E73813 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85214027A28F7800E73813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C85214227A28F7800E73813 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +104,6 @@
 				2C71FC3627A290FE00C03B61 /* BoardView.swift */,
 				2C85214627A28F7800E73813 /* Main.storyboard */,
 				2C85214B27A28F7A00E73813 /* LaunchScreen.storyboard */,
-				2C85214927A28F7A00E73813 /* Assets.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +114,14 @@
 				2C85214427A28F7800E73813 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C71FC4627A30CA000C03B61 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2C85214927A28F7A00E73813 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		2C85213427A28F7800E73813 = {
@@ -138,12 +147,14 @@
 		2C85213F27A28F7800E73813 /* Chess */ = {
 			isa = PBXGroup;
 			children = (
+				2C71FC4727A30CC300C03B61 /* drop.wav */,
 				2C85214027A28F7800E73813 /* AppDelegate.swift */,
 				2C85214227A28F7800E73813 /* SceneDelegate.swift */,
 				2C71FC4427A2EB8000C03B61 /* ChessDelegate.swift */,
 				2C71FC4127A2B8DF00C03B61 /* Models */,
 				2C71FC4227A2B8F200C03B61 /* Views */,
 				2C71FC4327A2B91700C03B61 /* Controllers */,
+				2C71FC4627A30CA000C03B61 /* Assets */,
 				2C85214E27A28F7A00E73813 /* Info.plist */,
 			);
 			path = Chess;
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C85214D27A28F7A00E73813 /* LaunchScreen.storyboard in Resources */,
+				2C71FC4827A30CC300C03B61 /* drop.wav in Resources */,
 				2C85214A27A28F7A00E73813 /* Assets.xcassets in Resources */,
 				2C85214827A28F7800E73813 /* Main.storyboard in Resources */,
 			);
@@ -489,7 +501,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,7 +530,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
