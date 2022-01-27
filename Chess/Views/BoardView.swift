@@ -72,6 +72,9 @@ class BoardView: UIView {
     
     func drawPieces() {
         for piece in shadowPieces {
+            if fromCol == piece.col && fromRow == piece.row {
+                continue
+            }
             let pieceImage = piece.image
             pieceImage.draw(in: CGRect(x: originX + CGFloat(piece.col) * cellSide, y: originY + CGFloat(piece.row) * cellSide, width: cellSide, height: cellSide))
         }
