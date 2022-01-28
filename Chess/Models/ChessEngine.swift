@@ -13,19 +13,24 @@ struct ChessEngine {
     var whitesTurn: Bool = true
     
     mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
-    
+        
+        //guard to dtereming if player has a candidate piece i.e not nil and if player does not put back
+        //his piece on the former square on the board
         guard let candidatePiece = pieceAt(col: fromCol, row: fromRow),
               !(fromCol == toCol && fromRow == toRow)
         else {
             return
         }
         
+        //guard to determine whos turn it is
         guard (candidatePiece.isWhite == whitesTurn) else {
             return
         }
         
+        //implementation that disallaws pieces of the same color to eat each other.
+        //but allows pieces of opposing colors to.
         if let targetPiece = pieceAt(col: toCol, row: toRow) {
-            guard !(targetPiece.isWhite && candidatePiece.isWhite) else {
+            guard !(targetPiece.isWhite == candidatePiece.isWhite) else {
                 return
             }
             pieces.remove(targetPiece)

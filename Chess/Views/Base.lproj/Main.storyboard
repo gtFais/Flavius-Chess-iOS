@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,24 +13,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbv-ZT-KdQ" customClass="BoardView" customModule="Chess" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="794" height="794"/>
+                                <rect key="frame" x="20" y="64" width="374" height="374"/>
                                 <color key="backgroundColor" red="0.83047526012663953" green="0.85697712031715878" blue="0.84711429807251648" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bbv-ZT-KdQ" secondAttribute="height" multiplier="1:1" id="YI4-wZ-cDe"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-Lh-oQX">
-                                <rect key="frame" x="20" y="842" width="794" height="29"/>
+                                <rect key="frame" x="20" y="458" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-h7-I6L">
-                                <rect key="frame" x="20" y="879" width="794" height="43"/>
+                                <rect key="frame" x="20" y="495" width="374" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -39,18 +39,44 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oZU-a0-AK2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-ig-Apw">
+                                <rect key="frame" x="20" y="546" width="374" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Advertise">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="advertiseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yin-te-D4J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSy-KB-1tV">
+                                <rect key="frame" x="20" y="597" width="374" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Join">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="joinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6s-e6-kl0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PSy-KB-1tV" firstAttribute="top" secondItem="bNt-ig-Apw" secondAttribute="bottom" constant="8" id="2kn-MU-nFA"/>
                             <constraint firstItem="CLE-h7-I6L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="B2F-Zt-dQt"/>
+                            <constraint firstItem="PSy-KB-1tV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E9P-cR-bRi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CLE-h7-I6L" secondAttribute="trailing" constant="20" id="GX0-YO-W9J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bNt-ig-Apw" secondAttribute="trailing" constant="20" id="IWn-7f-rvw"/>
+                            <constraint firstItem="bNt-ig-Apw" firstAttribute="top" secondItem="CLE-h7-I6L" secondAttribute="bottom" constant="8" id="KVP-8n-yHQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PSy-KB-1tV" secondAttribute="trailing" constant="20" id="Khl-LD-IvJ"/>
                             <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UWo-EY-3aq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jXz-Lh-oQX" secondAttribute="trailing" constant="20" id="cey-kr-4Zh"/>
                             <constraint firstItem="CLE-h7-I6L" firstAttribute="top" secondItem="jXz-Lh-oQX" secondAttribute="bottom" constant="8" id="fMz-Sv-B6n"/>
                             <constraint firstItem="jXz-Lh-oQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ivd-ay-bQS"/>
-                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="top" secondItem="bbv-ZT-KdQ" secondAttribute="bottom" constant="8" id="os0-CY-UmZ"/>
+                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="top" secondItem="bbv-ZT-KdQ" secondAttribute="bottom" constant="20" id="os0-CY-UmZ"/>
                             <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uPc-vw-NuX"/>
+                            <constraint firstItem="bNt-ig-Apw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vaD-dn-3QP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" constant="20" id="w1g-cF-DLC"/>
                         </constraints>
                     </view>
