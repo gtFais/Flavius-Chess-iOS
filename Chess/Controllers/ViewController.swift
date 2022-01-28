@@ -38,6 +38,9 @@ class ViewController: UIViewController {
         nearbyServiceAdvertiser = MCNearbyServiceAdvertiser(peer: peerId, discoveryInfo: nil, serviceType: "gt-chess")
         nearbyServiceAdvertiser.delegate = self
         nearbyServiceAdvertiser.startAdvertisingPeer()
+        
+        boardView.blackAtTop = false
+        boardView.setNeedsDisplay()
     }
     
     @IBAction func joinButton(_ sender: UIButton) {

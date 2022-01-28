@@ -26,6 +26,9 @@ class BoardView: UIView {
     var movingImage: UIImage? = nil
     var movingPieceX: CGFloat = -1
     var movingPieceY: CGFloat = -1
+    
+    var blackAtTop = true
+    //col[0] == col[7] col[i] = col[n - i] row[0] = row[7]
 
     override func draw(_ rect: CGRect) {
         cellSide = bounds.width * ratio / 8
@@ -39,8 +42,8 @@ class BoardView: UIView {
         let first = touches.first!
         let fingerLocation = first.location(in: self)
         
-        fromCol = Int((fingerLocation.x - originX) / cellSide)
-        fromRow = Int((fingerLocation.y - originY) / cellSide)
+        fromCol = p2p(Int((fingerLocation.x - originX) / cellSide))
+        fromRow = p2p(Int((fingerLocation.y - originY) / cellSide))
         
         if let fromCol = fromCol, let fromRow = fromRow, let movingPiece = chessDelegate?.getPieceAt(col: fromCol, row: fromRow) {
             movingImage = movingPiece.image
@@ -52,8 +55,9 @@ class BoardView: UIView {
         let first = touches.first!
         let fingerLocation = first.location(in: self)
         
-        let toCol: Int = Int((fingerLocation.x - originX) / cellSide)
-        let toRow: Int = Int((fingerLocation.y - originY) / cellSide)
+        let toCol: Int = p2p(Int((fingerLocation.x - originX) / cellSide))
+        let toRow: Int = p2p(Int((fingerLocation.y - originY) / cellSide))
+        
         
         if let fromCol = fromCol, let fromRow = fromRow, let chessDelegate = chessDelegate {
             chessDelegate.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
@@ -75,7 +79,8 @@ class BoardView: UIView {
     func drawPieces() {
         for piece in shadowPieces where !(fromCol == piece.col && fromRow == piece.row) {
             let pieceImage = piece.image
-            pieceImage.draw(in: CGRect(x: originX + CGFloat(piece.col) * cellSide, y: originY + CGFloat(piece.row) * cellSide, width: cellSide, height: cellSide))
+            
+            pieceImage.draw(in: CGRect(x: originX + CGFloat(p2p(piece.col)) * cellSide, y: originY + CGFloat(p2p(piece.row)) * cellSide, width: cellSide, height: cellSide))
         }
         movingImage?.draw(in: CGRect(x: movingPieceX - cellSide/2, y: movingPieceY - cellSide/2, width: cellSide, height: cellSide))
     }
@@ -95,8 +100,10 @@ class BoardView: UIView {
         let path = UIBezierPath(rect: CGRect(x: originX + CGFloat(col) * cellSide, y: originY + CGFloat(row) * cellSide, width: cellSide, height: cellSide))
         color.setFill()
         path.fill()
-        
-        
+    }
+    
+    func p2p(_ coordinate: Int) -> Int{
+        return blackAtTop ? coordinate : 7 - coordinate
     }
 
 }

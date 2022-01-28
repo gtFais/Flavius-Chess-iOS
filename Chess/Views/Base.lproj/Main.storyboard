@@ -17,20 +17,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbv-ZT-KdQ" customClass="BoardView" customModule="Chess" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="374"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="414"/>
                                 <color key="backgroundColor" red="0.83047526012663953" green="0.85697712031715878" blue="0.84711429807251648" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bbv-ZT-KdQ" secondAttribute="height" multiplier="1:1" id="YI4-wZ-cDe"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-Lh-oQX">
-                                <rect key="frame" x="20" y="458" width="374" height="29"/>
+                                <rect key="frame" x="20" y="64" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-h7-I6L">
-                                <rect key="frame" x="20" y="495" width="374" height="43"/>
+                                <rect key="frame" x="20" y="547" width="374" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-ig-Apw">
-                                <rect key="frame" x="20" y="546" width="374" height="43"/>
+                                <rect key="frame" x="20" y="598" width="374" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Advertise">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSy-KB-1tV">
-                                <rect key="frame" x="20" y="597" width="374" height="43"/>
+                                <rect key="frame" x="20" y="649" width="374" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Join">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -70,14 +70,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bNt-ig-Apw" secondAttribute="trailing" constant="20" id="IWn-7f-rvw"/>
                             <constraint firstItem="bNt-ig-Apw" firstAttribute="top" secondItem="CLE-h7-I6L" secondAttribute="bottom" constant="8" id="KVP-8n-yHQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PSy-KB-1tV" secondAttribute="trailing" constant="20" id="Khl-LD-IvJ"/>
-                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UWo-EY-3aq"/>
+                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UWo-EY-3aq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jXz-Lh-oQX" secondAttribute="trailing" constant="20" id="cey-kr-4Zh"/>
-                            <constraint firstItem="CLE-h7-I6L" firstAttribute="top" secondItem="jXz-Lh-oQX" secondAttribute="bottom" constant="8" id="fMz-Sv-B6n"/>
+                            <constraint firstItem="CLE-h7-I6L" firstAttribute="top" secondItem="bbv-ZT-KdQ" secondAttribute="bottom" constant="20" id="fMz-Sv-B6n"/>
                             <constraint firstItem="jXz-Lh-oQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ivd-ay-bQS"/>
-                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="top" secondItem="bbv-ZT-KdQ" secondAttribute="bottom" constant="20" id="os0-CY-UmZ"/>
-                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uPc-vw-NuX"/>
+                            <constraint firstItem="bbv-ZT-KdQ" firstAttribute="top" secondItem="jXz-Lh-oQX" secondAttribute="bottom" constant="20" id="kA5-KX-0gB"/>
+                            <constraint firstItem="jXz-Lh-oQX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="os0-CY-UmZ"/>
                             <constraint firstItem="bNt-ig-Apw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vaD-dn-3QP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" constant="20" id="w1g-cF-DLC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbv-ZT-KdQ" secondAttribute="trailing" id="w1g-cF-DLC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.65467625899282" y="65.827338129496411"/>
+            <point key="canvasLocation" x="130.43478260869566" y="65.625"/>
         </scene>
     </scenes>
     <resources>
